@@ -65,7 +65,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg">Call Us</h3>
-                      <a href="tel:+919876543210" className="text-slate-400 hover:text-white transition-colors">+91 98765 43210</a>
+                      <a href="tel:+919876543210" className="text-slate-400 hover:text-white transition-colors">+91 86259 47016</a>
                     </div>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ export default function Contact() {
                     <input
                       {...register("phone")}
                       className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 86259 47016"
                     />
                     {errors.phone && <p className="text-red-500 text-xs">{errors.phone.message}</p>}
                   </div>
