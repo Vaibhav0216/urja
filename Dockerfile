@@ -26,11 +26,17 @@ RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
 # Copy package files
 COPY package*.json ./
 
-# Install production dependencies only
-RUN npm ci --only=production && npm cache clean --force
+# Install production dependencies + drizzle-kit for migrations
+RUN npm ci --only=production && \
+    npm install drizzle-kit && \
+    npm cache clean --force
 
 # Copy built application from builder stage
 COPY --from=builder /app/dist ./dist
+
+# Copy drizzle schema and config for migrations
+COPY --from=builder /app/shared ./shared
+COPY --from=builder /app/drizzle.config.ts ./drizzle.config.ts
 
 # Change ownership to non-root user
 RUN chown -R nodejs:nodejs /app

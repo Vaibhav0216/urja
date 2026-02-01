@@ -17,7 +17,7 @@ export default function Solutions() {
         "Harmonic distortion detection",
         "Predictive maintenance alerts"
       ],
-      image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80" // electrical-substation
+      image: "/images/energy-systems.jpg"
     },
     {
       id: "electronics",
@@ -31,7 +31,7 @@ export default function Solutions() {
         "Ruggedized enclosure design",
         "EMC/EMI compliance testing"
       ],
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80" // microchip-manufacturing
+      image: "/images/electronics-embedded.jpg"
     },
     {
       id: "software",
@@ -45,7 +45,7 @@ export default function Solutions() {
         "API integration with ERP systems",
         "Mobile companion apps"
       ],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" // analytics-dashboard
+      image: "/images/software-data.jpg"
     },
     {
       id: "automation",
@@ -59,7 +59,7 @@ export default function Solutions() {
         "Remote monitoring capabilities",
         "Safety system upgrades"
       ],
-      image: "https://images.unsplash.com/photo-1565514020176-db5b53d10242?auto=format&fit=crop&q=80" // industrial-robot-arm
+      image: "/images/automation-retrofit.jpg"
     }
   ];
 

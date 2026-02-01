@@ -63,7 +63,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:contact@urjacore.com" className="hover:text-white transition-colors">contact@urjacore.com</a>
+                <a href="mailto:sales@urjacore.com" className="hover:text-white transition-colors">sales@urjacore.com</a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />

@@ -55,7 +55,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg">Email Us</h3>
-                      <a href="mailto:contact@urjacore.com" className="text-slate-400 hover:text-white transition-colors">contact@urjacore.com</a>
+                      <a href="mailto:sales@urjacore.com" className="text-slate-400 hover:text-white transition-colors">sales@urjacore.com</a>
                     </div>
                   </div>
 

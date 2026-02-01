@@ -9,11 +9,18 @@ if (missingVars.length > 0) {
   console.warn(`Warning: Missing email environment variables: ${missingVars.join(', ')}. Email notifications will be disabled.`);
 }
 
+// CC_EMAIL is optional - supports comma-separated multiple emails
+const ccEmail = process.env.CC_EMAIL 
+  ? process.env.CC_EMAIL.split(',').map(email => email.trim()).filter(Boolean)
+  : [];
+
 // Create transporter with Zoho SMTP settings
 const createTransporter = () => {
   if (missingVars.length > 0) {
     return null;
   }
+
+  const isProduction = process.env.NODE_ENV === 'production';
 
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -22,6 +29,11 @@ const createTransporter = () => {
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
+    },
+    tls: {
+      // Only reject unauthorized certificates in production
+      rejectUnauthorized: isProduction,
+      minVersion: 'TLSv1.2',
     },
   });
 };
@@ -33,9 +45,21 @@ const transporter = createTransporter();
  * @param inquiry - The inquiry data from the contact form
  */
 export async function sendInquiryNotification(inquiry: Inquiry): Promise<void> {
+  console.log('📧 Attempting to send email notification...');
+  
   if (!transporter) {
-    throw new Error('Email transporter not configured. Please set SMTP environment variables.');
+    const error = 'Email transporter not configured. Please set SMTP environment variables.';
+    console.error('❌', error);
+    throw new Error(error);
   }
+
+  console.log('📨 Email config:', {
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    from: process.env.SMTP_USER,
+    to: process.env.ADMIN_EMAIL,
+    cc: ccEmail.length > 0 ? ccEmail.join(', ') : 'none',
+  });
 
   const htmlContent = `
     <!DOCTYPE html>
@@ -130,11 +154,28 @@ ${inquiry.requirement}
 Submitted at: ${inquiry.createdAt ? new Date(inquiry.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) : 'N/A'}
   `;
 
-  await transporter.sendMail({
+  const mailOptions: any = {
     from: `"Urja Contact Form" <${process.env.SMTP_USER}>`,
     to: process.env.ADMIN_EMAIL,
     subject: `New Inquiry from ${inquiry.name} - ${inquiry.company}`,
     text: textContent,
     html: htmlContent,
-  });
+  };
+
+  // Add CC if configured
+  if (ccEmail.length > 0) {
+    mailOptions.cc = ccEmail;
+  }
+
+  try {
+    console.log('📤 Sending email...');
+    const info = await transporter.sendMail(mailOptions);
+    console.log('✅ Email sent successfully!');
+    console.log('📬 Message ID:', info.messageId);
+    console.log('📮 Accepted:', info.accepted);
+    console.log('🚫 Rejected:', info.rejected);
+  } catch (error) {
+    console.error('❌ Failed to send email:', error);
+    throw error;
+  }
 }

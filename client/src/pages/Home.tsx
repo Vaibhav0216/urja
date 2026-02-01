@@ -31,7 +31,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
             {/* electronics-circuit-board-blue-light-technology-background */}
             <img 
-              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80" 
+              src="/images/hero-industrial.jpg" 
               alt="Background Texture" 
               className="w-full h-full object-cover mix-blend-overlay opacity-30"
             />
@@ -145,7 +145,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-primary/20 mix-blend-multiply z-10 group-hover:bg-primary/10 transition-colors"></div>
                   {/* industrial-dashboard-monitor */}
                   <img 
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" 
+                    src="/images/software-data.jpg" 
                     alt="Energy Monitoring" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -175,7 +175,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-emerald-600/20 mix-blend-multiply z-10 group-hover:bg-emerald-600/10 transition-colors"></div>
                   {/* soldering-iron-electronics-lab */}
                   <img 
-                    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80" 
+                    src="/images/industrial-factory.jpg" 
                     alt="Electronics Prototyping" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />

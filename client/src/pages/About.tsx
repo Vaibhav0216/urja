@@ -12,7 +12,7 @@ export default function About() {
         <div className="bg-slate-900 text-white py-24 relative overflow-hidden">
           {/* abstract-geometric-shapes */}
           <img 
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+            src="/images/about-hero.jpg"
             alt="Background"
             className="absolute inset-0 w-full h-full object-cover opacity-20"
           />
@@ -72,7 +72,7 @@ export default function About() {
              </div>
              {/* engineering-team-collaborating */}
              <img 
-               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" 
+               src="/images/team-collaboration.jpg" 
                alt="Engineering Team" 
                className="w-full h-full object-cover"
              />

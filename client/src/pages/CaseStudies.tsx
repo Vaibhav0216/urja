@@ -12,7 +12,7 @@ export default function CaseStudies() {
       solution: "We deployed a network of IoT-enabled energy meters connected to a central dashboard that logged consumption patterns every minute.",
       result: "Identified 3 faulty units and optimized scheduling, resulting in a 15% reduction in monthly energy costs.",
       tags: ["Energy Monitoring", "IoT", "Dashboard"],
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80" // hvac-system
+      image: "/images/case-hvac.jpg"
     },
     {
       title: "Industrial Pump Health Monitoring",
@@ -21,7 +21,7 @@ export default function CaseStudies() {
       solution: "Designed a custom embedded device with vibration and temperature sensors attached to critical pump housings.",
       result: "Predictive maintenance alerts now warn operators 48 hours before potential failure, eliminating unplanned downtime.",
       tags: ["Predictive Maintenance", "Embedded Systems", "Sensors"],
-      image: "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&q=80" // industrial-pipes
+      image: "/images/case-industrial-pipes.jpg"
     },
     {
       title: "Prototype Controller for Start-up",
@@ -30,7 +30,7 @@ export default function CaseStudies() {
       solution: "Developed a custom PCB with soil moisture sensor inputs, valve control relays, and LoRaWAN connectivity for remote operation.",
       result: "Delivered 5 functional prototypes in 4 weeks, allowing the client to secure Series A funding.",
       tags: ["Prototyping", "PCB Design", "AgriTech"],
-      image: "https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?auto=format&fit=crop&q=80" // circuit-board-macro
+      image: "/images/case-circuit-board.jpg"
     }
   ];
 
